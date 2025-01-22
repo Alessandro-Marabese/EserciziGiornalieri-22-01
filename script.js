@@ -18,7 +18,8 @@ fetch("https://striveschool-api.herokuapp.com/books")
                     <div class="card-body">
                         <h5 class="card-title">${book.title}</h5>
                         <p class="card-text">${book.price} €</p>
-                        <button type="button" class="btn btn-primary">Scarta</button>
+                        <button type="button" class="btn btn-danger">Scarta</button>
+                        <button type="button" class="btn btn-danger">Rimuovi</button>
                         <button type="button" class="btn btn-primary">Compra Ora</button>
                     </div>
                 </div>`;
@@ -48,5 +49,14 @@ fetch("https://striveschool-api.herokuapp.com/books")
             carrello.appendChild(col);
         })
     })
+    const removeButtons = document.querySelectorAll(".card-body button:nth-child(2)");
+     removeButtons.forEach(ele => {
+         ele.addEventListener("click", function() {
+            const cardBody = ele.parentNode;
+            const cardElement = cardBody.parentNode;
+            const colCard = cardElement.parentNode;
+         })
+     });
+     
 })
 .catch(err => console.log(err));
